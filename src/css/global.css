@@ -16,4 +16,6 @@ button {
 
 body {
   font-family: "Inter", serif;
+  background-color: #fafafa;
+  height: 100vh;
 }
