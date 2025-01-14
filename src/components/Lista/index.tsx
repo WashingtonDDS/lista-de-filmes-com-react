@@ -1,10 +1,19 @@
+import { useState } from "react";
 import styles from "./lista.module.css";
 
 export const Lista = (): JSX.Element => {
+  const [filmes, setFilmes] = useState<string[]>([
+    "Harry Potter",
+    "Jogos Vorazes",
+    "Senhor dos Aneis",
+  ]);
   return (
     <ul className={styles["lista-container"]}>
-      <li className={styles.lista__item}>Harry Potter</li>
-      <li className={styles.lista__item}>Jogos Vorazes</li>
+      {filmes.map((filme) => (
+        <li key={filme} className={styles.lista__item}>
+          {filme}
+        </li>
+      ))}
     </ul>
   );
 };
