@@ -10,8 +10,11 @@ function App() {
   ]);
 
   const addFilme = () => {
-    const novoFilmes = [...filmes, "Divergentes"];
-    setfilmes(novoFilmes);
+    //const novoFilmes = [...filmes, "Divergentes"];
+    //setfilmes(novoFilmes);
+    setfilmes((filmesAnteriores: string[]) => {
+      return [...filmesAnteriores, "Divergentes"];
+    });
   };
   return (
     <section className={styles.lista}>
