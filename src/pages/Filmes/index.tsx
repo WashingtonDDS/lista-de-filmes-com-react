@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Lista } from "../../components/Lista";
 import styles from "./app.module.css";
+import { TFilmesProps } from "../../interface/filmesTypes";
 
-function Filmes() {
-  const [filmes, setfilmes] = useState<string[]>([
-    "Harry Potter",
-    "Jogos Vorazes",
-    "Senhor dos Aneis",
+export const Filmes = () => {
+  const [filmes, setfilmes] = useState<TFilmesProps[]>([
+    {
+      id: "1",
+      nome: "Harry Potter",
+    },
+    {
+      id: "2",
+      nome: "Jogos Vorazes",
+    },
   ]);
 
   const addFilme = () => {
@@ -16,13 +22,13 @@ function Filmes() {
       return [...filmesAnteriores, "Divergentes"];
     });
   };
+
   return (
-    <section className={styles.lista}>
-      <h1 className={styles.title}>Filmes ({filmes.length})</h1>
+    <section className={styles.filmes}>
+      <h1 className={styles.titulo}>Filmes ({filmes.length})</h1>
+      <Cadastra />
+      <Altera />
       <Lista items={filmes} setItems={setfilmes} />
-      <button onClick={addFilme}>Adicionar Filme</button>
     </section>
   );
-}
-
-export default App;
+};
