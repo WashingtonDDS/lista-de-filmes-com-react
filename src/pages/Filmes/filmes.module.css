@@ -1,8 +1,10 @@
-.lista {
+.filmes {
   background-color: #fafafa;
+  max-width: 600px;
+  margin: auto;
 }
 
-.title {
+.titulo {
   text-transform: uppercase;
   text-align: center;
   padding: 64px 32px;
