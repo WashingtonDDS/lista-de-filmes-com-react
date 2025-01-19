@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Lista } from "../../components/Lista";
 import styles from "./app.module.css";
 
-function App() {
+function Filmes() {
   const [filmes, setfilmes] = useState<string[]>([
     "Harry Potter",
     "Jogos Vorazes",

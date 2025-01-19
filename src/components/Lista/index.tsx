@@ -1,10 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
 import styles from "./lista.module.css";
-
-type TListaProps = {
-  items: string[];
-  setItems: Dispatch<SetStateAction<string[]>>;
-};
+import { TListaProps } from "../../interface/listaTypes";
 
 export const Lista = ({ items, setItems }: TListaProps): JSX.Element => {
   const deletarFilmes = (filme: string) => {
