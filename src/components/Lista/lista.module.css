@@ -1,4 +1,4 @@
-.lista-container {
+.lista {
   list-style: none;
   padding: 16px;
 }
@@ -6,4 +6,21 @@
 .lista__item {
   padding: 16px;
   border-bottom: 1px solid #ccc;
+  text-transform: capitalize;
+}
+.botao__excluir,
+.botao__alterar {
+  margin-left: 16px;
+}
+
+.botao__excluir {
+  background-color: rgb(193, 0, 0);
+  color: #fff;
+  box-shadow: 2px 2px 2px rgb(118, 1, 1);
+}
+
+.botao__alterar {
+  background-color: rgb(123, 123, 123);
+  color: #dcdcdc;
+  box-shadow: 2px 2px 2px #272727;
 }
