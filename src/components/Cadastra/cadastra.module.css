@@ -1,0 +1,25 @@
+.formulario {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.formulario__nomeFilme,
+.botao__cadastrar {
+  height: 50px;
+  padding: 4px 8px;
+}
+
+.formulario__nomeFilme {
+  min-width: calc(600px - 116px - 32px);
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.botao__cadastrar {
+  background-color: green;
+  color: #fff;
+  box-shadow: 2px 2px 2px rgb(0, 58, 0);
+}
