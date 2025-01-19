@@ -15,7 +15,17 @@ button {
 }
 
 body {
-  font-family: "Inter", serif;
+  font-family: "Inter", sans-serif;
   background-color: #fafafa;
   height: 100vh;
+}
+
+.botao {
+  border: 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.botao:hover {
+  filter: brightness(1.25);
 }
