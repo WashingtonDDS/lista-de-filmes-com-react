@@ -20,6 +20,7 @@ export const Cadastra = ({ setFilmes }: TCadastraProps) => {
     };
 
     setFilmes((listaFilmesAnterior) => [...listaFilmesAnterior, novoFilme]);
+    nomeFilmeRef.current.value = "";
   };
   return (
     <form onSubmit={addFilme} className={styles.formulario}>
