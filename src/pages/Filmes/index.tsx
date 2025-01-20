@@ -5,7 +5,7 @@ import { TFilmesProps } from "../../interface/filmesTypes";
 import { Cadastra } from "../../components/Cadastra";
 
 export const Filmes = () => {
-  const [filmes, setfilmes] = useState<TFilmesProps[]>([
+  const [filmes, setFilmes] = useState<TFilmesProps[]>([
     {
       id: "1",
       nome: "Harry Potter",
@@ -19,9 +19,13 @@ export const Filmes = () => {
   return (
     <section className={styles.filmes}>
       <h1 className={styles.titulo}>Filmes ({filmes.length})</h1>
-      <Cadastra setfilmes={setfilmes} />
+      <Cadastra setFilmes={setFilmes} />
       {/* <Altera /> */}
-      <Lista itens={filmes} setItens={setfilmes} />
+      <Lista
+        lidarComOAlterar={lidarComOAlterar}
+        itens={filmes}
+        setItens={setFilmes}
+      />
     </section>
   );
 };

@@ -4,6 +4,7 @@ import { TListaProps } from "../../interface/listaTypes";
 export const Lista = ({
   itens,
   setItens,
+  lidarComOAlterar,
 }: Readonly<TListaProps>): JSX.Element => {
   const deletarFilme = (id: string) => {
     const novosFilmes = itens.filter((item) => item.id !== id);

@@ -4,10 +4,22 @@ import { TCadastraProps } from "../../interface/cadastraTypes";
 
 export const Cadastra = ({ setFilmes }: TCadastraProps) => {
   const nomeFilmeRef = useRef<HTMLInputElement>(null);
+  console.log(nomeFilmeRef);
 
   const addFilme = (event: FormEvent) => {
     event.preventDefault();
-    console.log(nomeFilmeRef?.current?.value, "<= nomeFilmeRef");
+
+    const nomeFilmeValor = nomeFilmeRef?.current?.value;
+    if (!nomeFilmeValor) {
+      alert("Preencha o nome do filme");
+      return;
+    }
+    const novoFilme = {
+      id: crypto.randomUUID(),
+      nome: nomeFilmeValor,
+    };
+
+    setFilmes((listaFilmesAnterior) => [...listaFilmesAnterior, novoFilme]);
   };
   return (
     <form onSubmit={addFilme} className={styles.formulario}>
