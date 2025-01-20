@@ -1,7 +1,16 @@
+import { FormEvent, useRef } from "react";
 import styles from "./cadastra.module.css";
-export const Cadastra = () => {
+import { TCadastraProps } from "../../interface/cadastraTypes";
+
+export const Cadastra = ({ setFilmes }: TCadastraProps) => {
+  const nomeFilmeRef = useRef<HTMLInputElement>(null);
+
+  const addFilme = (event: FormEvent) => {
+    event.preventDefault();
+    console.log(nomeFilmeRef?.current?.value, "<= nomeFilmeRef");
+  };
   return (
-    <form className={styles.formulario}>
+    <form onSubmit={addFilme} className={styles.formulario}>
       <input
         type="text"
         className={styles.formulario__nomeFilme}
