@@ -3,8 +3,13 @@ import { Lista } from "../../components/Lista";
 import styles from "./filmes.module.css";
 import { TFilmesProps } from "../../interface/filmesTypes";
 import { Cadastra } from "../../components/Cadastra";
+import { Altera } from "../../components/Altera";
 
 export const Filmes = () => {
+  const [filmeAtual, setFilmeAtual] = useState<TFilmesProps>({
+    id: "",
+    nome: "",
+  });
   const [filmes, setFilmes] = useState<TFilmesProps[]>([
     {
       id: "1",
@@ -20,7 +25,7 @@ export const Filmes = () => {
     <section className={styles.filmes}>
       <h1 className={styles.titulo}>Filmes ({filmes.length})</h1>
       <Cadastra setFilmes={setFilmes} />
-      {/* <Altera /> */}
+      <Altera />
       <Lista
         lidarComOAlterar={lidarComOAlterar}
         itens={filmes}
