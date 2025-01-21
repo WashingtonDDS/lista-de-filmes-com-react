@@ -1,10 +1,12 @@
+import { TAlteraProps } from "../../interface/alteraTypes";
 import styles from "./altera.module.css";
 
-export function Altera(): JSX.Element {
+export function Altera({ filmeAtual }: TAlteraProps): JSX.Element {
   return (
     <form className={styles.formulario}>
       <h1 className={styles.form__titulo}>Alterar Filme</h1>
       <input
+        value={filmeAtual.nome}
         placeholder="Digite o nome do filme"
         className={styles.formulario__nomeFilme}
       />

@@ -30,7 +30,7 @@ export const Filmes = () => {
     <section className={styles.filmes}>
       <h1 className={styles.titulo}>Filmes ({filmes.length})</h1>
       <Cadastra setFilmes={setFilmes} />
-      <Altera />
+      <Altera filmeAtual={filmeAtual} />
       <Lista
         lidarComOAlterar={lidarComOAlterar}
         itens={filmes}
