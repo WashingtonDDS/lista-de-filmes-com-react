@@ -21,6 +21,11 @@ export const Filmes = () => {
     },
   ]);
 
+  const lidarComOAlterar = (filme: TFilmesProps) => {
+    setFilmeAtual(filme);
+    console.log(filme);
+  };
+
   return (
     <section className={styles.filmes}>
       <h1 className={styles.titulo}>Filmes ({filmes.length})</h1>
