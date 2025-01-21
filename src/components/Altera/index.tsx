@@ -23,7 +23,12 @@ export function Altera({
     );
     if (indexDofilmeQueVaiSerAlterado === -1) return;
     const novosFilmes = [...filmes];
-    novosFilmes[indexDofilmeQueVaiSerAlterado].nome = filmeAtual.nome;
+    const novoFilme = {
+      ...novosFilmes[indexDofilmeQueVaiSerAlterado],
+      nome: filmeAtual.nome,
+    };
+    novosFilmes[indexDofilmeQueVaiSerAlterado] = novoFilme;
+    setFilmes(novosFilmes);
   };
   return (
     <form onSubmit={alterarFilme} className={styles.formulario}>
