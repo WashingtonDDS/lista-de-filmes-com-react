@@ -1,24 +1,36 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 import { TAlteraProps } from "../../interface/alteraTypes";
 import styles from "./altera.module.css";
 
 export function Altera({
   filmeAtual,
   setFilmeAtual,
+  filmes,
+  setFilmes,
 }: TAlteraProps): JSX.Element {
-  const alterarFilme = (event: ChangeEvent<HTMLInputElement>) => {
+  const alterarNomeFilme = (event: ChangeEvent<HTMLInputElement>) => {
     const novoFilme = {
       id: filmeAtual.id,
       nome: event.target.value,
     };
     setFilmeAtual(novoFilme);
   };
+
+  const alterarFilme = (event: FormEvent) => {
+    event.preventDefault();
+    const indexDofilmeQueVaiSerAlterado = filmes.findIndex(
+      (filme) => filme.id === filmeAtual.id
+    );
+    if (indexDofilmeQueVaiSerAlterado === -1) return;
+    const novosFilmes = [...filmes];
+    novosFilmes[indexDofilmeQueVaiSerAlterado].nome = filmeAtual.nome;
+  };
   return (
-    <form className={styles.formulario}>
+    <form onSubmit={alterarFilme} className={styles.formulario}>
       <h1 className={styles.form__titulo}>Alterar Filme</h1>
       <input
         value={filmeAtual.nome}
-        onChange={alterarFilme}
+        onChange={alterarNomeFilme}
         placeholder="Digite o nome do filme"
         className={styles.formulario__nomeFilme}
       />
