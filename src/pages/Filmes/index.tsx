@@ -6,6 +6,8 @@ import { Cadastra } from "../../components/Cadastra";
 import { Altera } from "../../components/Altera";
 
 export const Filmes = () => {
+  const [modalAlterar, setModalAterar] = useState<boolean>(false);
+
   const [filmeAtual, setFilmeAtual] = useState<TFilmesProps>({
     id: "",
     nome: "",
