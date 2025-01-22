@@ -25,7 +25,7 @@ export const Filmes = () => {
 
   const lidarComOAlterar = (filme: TFilmesProps) => {
     setFilmeAtual(filme);
-    console.log(filme);
+    setModalAterar(true);
   };
 
   return (
@@ -33,6 +33,8 @@ export const Filmes = () => {
       <h1 className={styles.titulo}>Filmes ({filmes.length})</h1>
       <Cadastra setFilmes={setFilmes} />
       <Altera
+        modalAlterar={modalAlterar}
+        setModalAterar={setModalAterar}
         filmeAtual={filmeAtual}
         setFilmeAtual={setFilmeAtual}
         filmes={filmes}
