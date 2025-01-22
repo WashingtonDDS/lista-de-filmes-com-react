@@ -4,7 +4,6 @@ import { TCadastraProps } from "../../interface/cadastraTypes";
 
 export const Cadastra = ({ setFilmes }: TCadastraProps) => {
   const nomeFilmeRef = useRef<HTMLInputElement>(null);
-  console.log(nomeFilmeRef);
 
   const addFilme = (event: FormEvent) => {
     event.preventDefault();
@@ -26,6 +25,7 @@ export const Cadastra = ({ setFilmes }: TCadastraProps) => {
     <form onSubmit={addFilme} className={styles.formulario}>
       <input
         type="text"
+        ref={nomeFilmeRef}
         className={styles.formulario__nomeFilme}
         placeholder="Digite o nome do filme"
       />
